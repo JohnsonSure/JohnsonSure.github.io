@@ -1,0 +1,109 @@
+:root{
+    --boxshadows2:#222;
+    --skeleton: rgba(220, 220, 220, 0.483);
+    --magenta: crimson;
+}
+.single-post{
+    width: 94vw;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    height: 400px;
+    margin: 11vh auto;
+  box-shadow: 1px 1px 5px 1px var(--boxshadows2);
+}
+.section1{
+height: 23%;
+width: 100%;
+border-radius:10px 5px ;
+background-color: var(--skeleton);
+}
+.section2{
+    height: 60%;
+    width: 100%;
+    border-radius: 5px;
+    margin: 1% 0%;
+    background-color: var(--skeleton);
+}
+.section3{
+    height: 15%;
+    width: 100%;
+    border-radius: 5px 10px ;
+    background-color: var(--skeleton);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.section3>div{
+width: 30%;
+height: 80%;
+border-radius: 10px;
+background-color: white;
+}#like{
+background-color: blue;
+}.likes{
+    display: inline-block;
+}
+#heart{
+    position: relative;
+    top: 10%;
+    left: 10%;
+    stroke: var(--magenta);
+    fill: var(--skeleton);
+    stroke-dasharray: 54;
+    stroke-dashoffset: 54;
+}
+#heart.like{
+    animation: 2s ease-in forwards like, 0.8s linear 2s 2 forwards beating;
+}
+#heart.unlike{
+    animation: 2s ease-out forwards unlike,
+}
+
+@keyframes like{
+0%{
+    stroke-dashoffset: 54;
+    fill: var(--skeleton);
+}
+70%{
+    stroke-dashoffset: 0;
+    fill: var(--skeleton);
+}
+100%{
+    stroke-dashoffset: 0;
+    fill: var(--magenta);
+}
+}
+@keyframes unlike{
+0%{
+    stroke-dashoffset: 0;
+    fill: var(--magenta);
+}
+30%{
+    stroke-dashoffset: 0;
+    fill: var(--skeleton);
+}
+100%{
+    stroke-dashoffset: 54;
+    fill: var(--skeleton);
+}
+}
+@keyframes beating{
+0%{
+    transform: scale(1,1);
+}
+50%{
+    transform: scale(0.99,0.99);
+}
+100%{
+    transform: scale(1,1);
+}
+}
+/*like{
+.53
+} .comment{
+
+}.share{
+
+} */
